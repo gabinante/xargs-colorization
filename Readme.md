@@ -6,5 +6,7 @@ output for that thread will be colorized separately from the others.
 Inspired by xargs output being absolutely unreadable if you're invoking
 verbose scripts.
 
+If you use more than 8 threads, something will probably blow up.
+
 ![Example](https://github.com/gabinante/xargs-colorization/raw/master/xargs-colorized.png)
 

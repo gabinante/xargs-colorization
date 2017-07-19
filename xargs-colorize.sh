@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-#cat /tmp/blarp.txt | xargs -n 1 -P 8 bash ~/GitHub/xargtest.sh
+#cd ~/Github;ls | xargs -n 1 -P 8 bash ~/Github/xargs-colorization/xargs-colorize.sh
 
 # This adds colors for xargs so you can tell your threads apart.
 #RED
@@ -23,7 +23,7 @@ arr[7]="tput setaf 6"
 #WHITE
 arr[8]="tput setaf 7"
 
-for (( i = 0; i < ${#arr[@]} ; i++ )); do
+for (( i = 0; i < ${#arr} ; i++ )); do
   if mkdir /tmp/arr$i-lock 2> /dev/null; then
     eval ${arr[$i]}
     echo "color lock gained for xargs thread $i"
@@ -32,7 +32,7 @@ for (( i = 0; i < ${#arr[@]} ; i++ )); do
 done
 
 # Your Parallel script here
-echo "PARALLEL XARGS SCRIPTS: NOW WITH COLORIZATION"
-sleep 5
+git -C $1 pull
+
 
 rm -r /tmp/arr$i-lock;
